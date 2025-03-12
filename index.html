@@ -1,24 +1,49 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hover Image Change</title>
+    <title>Image Hover Effect</title>
     <style>
+        /* 이미지 컨테이너 설정 */
         .image-container {
-            display: inline-block;
+            width: 300px;  /* 이미지 크기 */
+            height: 300px;  /* 이미지 크기 */
+            position: relative;  /* 두 이미지가 겹쳐질 수 있도록 설정 */
         }
+
+        /* 이미지 기본 스타일 */
         .image-container img {
-            width: 300px; /* 원하는 크기로 조정 */
-            height: auto;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transition: opacity 0.3s ease;  /* 마우스 오버 시 이미지 부드럽게 전환 */
+        }
+
+        /* 첫 번째 이미지 (기본 이미지) */
+        .image-1 {
+            opacity: 1;
+        }
+
+        /* 두 번째 이미지 (변경된 이미지) */
+        .image-2 {
+            opacity: 0;  /* 기본적으로 숨김 */
+        }
+
+        /* 마우스 오버 시 첫 번째 이미지 숨기고 두 번째 이미지 보이게 하기 */
+        .image-container:hover .image-1 {
+            opacity: 0;
+        }
+
+        .image-container:hover .image-2 {
+            opacity: 1;
         }
     </style>
 </head>
 <body>
     <div class="image-container">
-        <img id="changeImage" src="https://github.com/ahchu0515/ahchu55/blob/raw/%EA%B9%80%EC%9A%B0%EC%A7%84.png?raw=true" 
-            onmouseover="this.src='https://github.com/ahchu0515/ahchu55/blob/raw/%EA%B9%80%EC%9A%B0%EC%A7%84%EC%B2%B4%EC%9D%B8%EC%A7%80.png?raw=true';"
-            onmouseout="this.src='https://github.com/ahchu0515/ahchu55/blob/raw/%EA%B9%80%EC%9A%B0%EC%A7%84.png?raw=true';">
+        <img src="https://github.com/ahchu0515/ahchu55/blob/raw/%EA%B9%80%EC%9A%B0%EC%A7%84.png?raw=true" class="image-1" alt="Image 1">
+        <img src="https://github.com/ahchu0515/ahchu55/blob/main/%EA%B9%80%EC%9A%B0%EC%A7%84%EC%B2%B4%EC%9D%B8%EC%A7%80.png?raw=true" class="image-2" alt="Image 2">
     </div>
 </body>
 </html>
