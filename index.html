@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Image Change</title>
+    <style>
+        .image-container {
+            display: inline-block;
+        }
+        .image-container img {
+            width: 300px; /* 원하는 크기로 조정 */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img id="changeImage" src="https://imgur.com/a/j9PKYb6" 
+            onmouseover="this.src='https://imgur.com/a/Esv8c2F';"
+            onmouseout="this.src='https://imgur.com/a/j9PKYb6';">
+    </div>
+</body>
+</html>
