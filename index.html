@@ -10,13 +10,14 @@
             height: auto;
             position: relative;
             display: inline-block;
+            cursor: pointer; /* 클릭 가능하도록 설정 */
         }
 
         .image-container img {
             width: 100%;
             height: auto;
             position: absolute;
-            transition: opacity 0.1s ease;
+            transition: opacity 0.3s ease;
         }
 
         .image-1 {
@@ -39,13 +40,18 @@
             z-index: 2;
         }
     </style>
+
+    <script>
+        function goToSite() {
+            let siteURL = "https://ahchuoc0515.notion.site/8116e875a79d419d85a3a847abe6e730"; // 이동할 사이트 주소
+            window.open(siteURL, "_blank"); // 새 창에서 강제로 열기
+        }
+    </script>
 </head>
 <body>
-    <a href="https://ahchuoc0515.notion.site/8116e875a79d419d85a3a847abe6e730?pvs=4" target="_self">
-        <div class="image-container">
-            <img src="https://ahchu0515.github.io/ahchu55/김우진.png" class="image-1" alt="Image 1">
-            <img src="https://ahchu0515.github.io/ahchu55/프로오사.png" class="image-2" alt="Image 2">
-        </div>
-    </a>
+    <div class="image-container" onclick="goToSite()">
+        <img src="https://ahchu0515.github.io/ahchu55/김우진.png" class="image-1" alt="Image 1">
+        <img src="https://ahchu0515.github.io/ahchu55/프로오사.png" class="image-2" alt="Image 2">
+    </div>
 </body>
 </html>
